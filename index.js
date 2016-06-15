@@ -12,7 +12,7 @@ app.get('/:name', function(req,res){
 	res.sendFile(__dirname+'/'+filename, (err)=>{
 		if(err){
 			console.log(err);
-			res.sendFile(path.join(__dirname+'/404.html'));
+			res.sendFile(__dirname+'/404.html');
 		}else{
 			console.log('ok ' + filename + ' loaded');	
 		}
