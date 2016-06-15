@@ -4,7 +4,6 @@
 
 Copy index.js file inside you static files, respecting this following architecture
 ```
-<pre>
 	- /img
 	- /js
 	- /css
@@ -12,7 +11,6 @@ Copy index.js file inside you static files, respecting this following architectu
 	- otherPage.html
 	- 404.html
 	- index.js
-</pre>
 ```
 ## Enchancement
 
