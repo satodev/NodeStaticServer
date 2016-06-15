@@ -12,6 +12,7 @@ Copy index.js file inside you static files, respecting this following architectu
 	- 404.html
 	- index.js
 ```
+Launch `node index.js` to start server and then browser `localhost:8080`
 ## Enchancement
 
  - [ ] Custom File System
