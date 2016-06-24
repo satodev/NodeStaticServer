@@ -13,7 +13,13 @@ Copy index.js file inside you static files, respecting this following architectu
 	- index.js
 ```
 Launch `node index.js` to start server and then browser `localhost:8080`
-## Enchancement
+## Current Features
 
- - [ ] Custom File System
- - [ ] Url Flexibility (use something else than file.html in the url)
+- Server All static file as : `/img` , `/js`, `/css`
+- Server 404 page at : `/`
+- Simple Angular ngRoute supports, throwing every page to index.html and then detect `/:name` to server `:name` page 
+- Serve Favicon.ico at : `/`
+
+## To Do Enchancement
+
+ - [ ] Possibility to toggle between Angular Route and Classical/Static Route system

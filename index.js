@@ -12,9 +12,10 @@ app.get('/', (req,res)=>{
 });
 app.get('/:name', function(req,res){
 	filename = req.params.name;
-	if(filename.substr(-5) != '.html'){
-		fs.readFile(__dirname+'/'+filename+'.html', (err, data)=>{
-			if(err) {
+	filename_array = filename.split('.');
+	if(filename_array.length <= 1){
+		fs.readFile(__dirname+'/'+filename+'.html', (err,data)=>{
+			if(err){ 
 				console.log(err);
 				res.sendFile(__dirname+'/404.html');
 			}
@@ -23,14 +24,27 @@ app.get('/:name', function(req,res){
 			}
 		});
 	}else{
-		fs.readFile(__dirname+'/'+filename, (err,data)=>{
-			if(err) console.log(err);
-			if(data){
-				res.sendFile(__dirname+'/'+filename);
-			}
-		});
+		if(filename_array[1] == 'html'){
+			fs.readFile(__dirname+'/'+filename, (err, data)=>{
+				if(err) {
+					console.log(err);
+					res.sendFile(__dirname+'/404.html');
+				}
+				if(data){
+					res.sendFile(__dirname+'/'+filename);
+				}
+			});
+		}
+		if(filename_array[1] == 'ico'){
+			fs.readFile(__dirname+'/'+filename, (err, data)=>{
+				if(err) console.log(err);
+				if(data){
+					res.sendFile(__dirname+'/'+filename);
+				}
+			});
+		}
 	}
 });
 app.listen(8080, function(){
-		console.log('Node Server Running on 8080');
+	console.log('Node Server Running on 8080');
 });
